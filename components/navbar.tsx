@@ -43,7 +43,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20 md:h-24">
           <Link href="/" className="flex items-center">
-            <div className="relative w-16 h-16">
+            <div className="relative w-22 h-22 md:w-32 md:h-32">
               <Image src="/pijar-logo.png" alt="Pijar Technology Logo" fill className="object-contain" />
             </div>
           </Link>
