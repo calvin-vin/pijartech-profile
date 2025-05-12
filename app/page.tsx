@@ -8,51 +8,44 @@ import TeamCarousel from "@/components/team-carousel"
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f8f8f8]">
-      {/* Hero Section with Navbar */}
-      <div className="relative">
-        <div className="absolute inset-0 z-0">
-          <Image src="/programming-background.jpg" alt="Background" fill className="object-cover" priority />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#f8f8f8]/90 to-[#f8f8f8]"></div>
-        </div>
+      <Navbar />
 
-        <Navbar />
-
-        <section className="relative z-10 overflow-hidden py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="z-10">
-                <h1 className="text-4xl md:text-5xl font-bold text-[#414141] mb-4">
-                  We Code
-                  <br />
-                  We Deliver
-                </h1>
-                <div className="flex items-center gap-3 mt-8">
-                  <div className="bg-[#9fd685] rounded-full p-2">
-                    <Play className="h-4 w-4 text-white" />
-                  </div>
-                  <p className="text-sm text-[#414141]">
-                    Pijar Tech specializes in developing
-                    <br />
-                    high-performing mobile and
-                    <br />
-                    web applications.
-                  </p>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-[#f8f8f8] py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="z-10">
+              <h1 className="text-4xl md:text-5xl font-bold text-[#414141] mb-4">
+                We Code
+                <br />
+                We Deliver
+              </h1>
+              <div className="flex items-center gap-3 mt-8">
+                <div className="bg-[#9fd685] rounded-full p-2">
+                  <Play className="h-4 w-4 text-white" />
                 </div>
-              </div>
-              <div className="relative">
-                <Image
-                  src="/programming-background.jpg"
-                  alt="Programmer working with code"
-                  width={500}
-                  height={400}
-                  className="rounded-tl-[100px] rounded-br-[100px] object-cover shadow-lg"
-                  priority
-                />
+                <p className="text-sm text-[#414141]">
+                  Pijar Tech specializes in developing
+                  <br />
+                  high-performing mobile and
+                  <br />
+                  web applications.
+                </p>
               </div>
             </div>
+            <div className="relative">
+              <Image
+                src="/programming-background.jpg"
+                alt="Programmer working with code"
+                width={500}
+                height={400}
+                className="rounded-tl-[100px] rounded-br-[100px] object-cover"
+                priority
+              />
+            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       {/* What We Do Section */}
       <section className="py-16 bg-white">
@@ -192,7 +185,17 @@ export default function Home() {
       <section className="py-16 bg-[#f8f8f8]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-[#414141] mb-12">Our Team</h2>
+
           <TeamCarousel />
+
+          <div className="flex justify-center gap-2 mt-8">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <div
+                key={`dot-${i}`}
+                className={`w-2 h-2 rounded-full ${i === 0 ? "bg-[#414141]" : "bg-[#c4c4c4]"}`}
+              ></div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -228,17 +231,13 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-lg font-bold text-[#414141] mb-6">Location</h3>
-              <div className="mb-4 rounded-lg overflow-hidden h-[200px]">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.3064034057224!2d106.10313611475857!3d-2.1003256590447807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMDYnMDEuMiJTIDEwNsKwMDYnMTkuMSJF!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Pijar Tech Location"
-                  className="w-full h-full"
+              <div className="mb-4 rounded-lg overflow-hidden">
+                <Image
+                  src="/placeholder.svg?height=200&width=300"
+                  alt="Map location"
+                  width={300}
+                  height={200}
+                  className="w-full"
                 />
               </div>
               <p className="text-sm font-bold text-[#414141]">Pijar Tech</p>
