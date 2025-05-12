@@ -185,17 +185,7 @@ export default function Home() {
       <section className="py-16 bg-[#f8f8f8]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-[#414141] mb-12">Our Team</h2>
-
           <TeamCarousel />
-
-          <div className="flex justify-center gap-2 mt-8">
-            {Array.from({ length: 4 }).map((_, i) => (
-              <div
-                key={`dot-${i}`}
-                className={`w-2 h-2 rounded-full ${i === 0 ? "bg-[#414141]" : "bg-[#c4c4c4]"}`}
-              ></div>
-            ))}
-          </div>
         </div>
       </section>
 
