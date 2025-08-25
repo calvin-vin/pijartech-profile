@@ -19,10 +19,6 @@ export const metadata: Metadata = {
     locale: "id_ID",
     type: "website",
   },
-  icons: {
-    icon: "/favicon_io/favicon.ico",
-    apple: "/favicon_io/apple-touch-icon.png",
-  },
 };
 
 const inter = Inter({ subsets: ["latin"] });
