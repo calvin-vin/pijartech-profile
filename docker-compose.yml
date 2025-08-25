@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  nextjs:
+    container_name: pijartech-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    # Uncomment the following lines if you need environment variables
+    # environment:
+    #   - DATABASE_URL=your_database_url
+    #   - API_KEY=your_api_key
+    networks:
+      - pijartech-network
+
+  # Uncomment if you need a database
+  # db:
+  #   image: postgres:14
+  #   container_name: pijartech-db
+  #   restart: always
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   environment:
+  #     - POSTGRES_PASSWORD=postgres
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_DB=pijartech
+  #   networks:
+  #     - pijartech-network
+
+networks:
+  pijartech-network:
+    driver: bridge
+
+# Uncomment if you need volumes for database persistence
+# volumes:
+#   postgres_data:
