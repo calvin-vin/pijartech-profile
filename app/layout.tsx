@@ -19,6 +19,17 @@ export const metadata: Metadata = {
     locale: "id_ID",
     type: "website",
   },
+  icons: {
+    icon: "/favicon_io/android-chrome-512x512.png",
+    shortcut: "/favicon_io/android-chrome-512x512.png",
+    apple: "/favicon_io/apple-touch-icon.png",
+    other: {
+      rel: "icon",
+      url: "/favicon_io/android-chrome-512x512.png",
+      type: "image/png",
+      sizes: "512x512",
+    },
+  },
 };
 
 const inter = Inter({ subsets: ["latin"] });
