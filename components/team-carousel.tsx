@@ -1,61 +1,114 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const teamMembers = [
   {
-    name: "Elisabeth Be",
-    role: "COO",
-    image: "/placeholder.svg?height=200&width=200",
+    name: "Lewi Mawa",
+    role: "Komisaris Utama",
+    image: "/images/teams/lewi.png",
   },
   {
-    name: "Andree Wijaya",
-    role: "CEO/CTO",
-    image: "/placeholder.svg?height=200&width=200",
+    name: "Gabriella Frederica",
+    role: "Komisaris",
+    image: "/images/teams/gabi.png",
   },
   {
-    name: "Sanjaya Wahono",
-    role: "CFO",
-    image: "/placeholder.svg?height=200&width=200",
+    name: "Ditra Liandaputra",
+    role: "Komisaris",
+    image: "/images/teams/ditra.png",
   },
   {
-    name: "Jane Smith",
-    role: "Lead Developer",
-    image: "/placeholder.svg?height=200&width=200",
+    name: "Adisuputra",
+    role: "Direktur Operasional",
+    image: "/images/teams/adi.png",
   },
   {
-    name: "John Doe",
-    role: "UX Designer",
-    image: "/placeholder.svg?height=200&width=200",
+    name: "Christopher Frederickson",
+    role: "Direktur Utama",
+    image: "/images/teams/erik.png",
   },
   {
-    name: "Sarah Johnson",
-    role: "Project Manager",
-    image: "/placeholder.svg?height=200&width=200",
+    name: "Evandry Gustianto",
+    role: "Direktur Administrasi",
+    image: "/images/teams/evan.png",
   },
-]
+  {
+    name: "Veris Juniardi",
+    role: "Tech Lead",
+    image: "/images/teams/veris.png",
+  },
+  {
+    name: "Nurita Evitarina",
+    role: "Senior Software Engineer",
+    image: "/images/teams/nurita.png",
+  },
+  {
+    name: "Muhamad Zakky",
+    role: "Senior Software Engineer",
+    image: "/images/teams/zakky.png",
+  },
+  {
+    name: "Rama Saktriawindarta",
+    role: "Senior Software Engineer",
+    image: "/images/teams/rama.png",
+  },
+  {
+    name: "Muhammad Viky",
+    role: "Senior Software Engineer",
+    image: "/images/teams/viki.png",
+  },
+  {
+    name: "Asri Yudha",
+    role: "Software Engineer",
+    image: "/images/teams/yudha.png",
+  },
+  {
+    name: "Calvin",
+    role: "Software Engineer",
+    image: "/images/teams/calvin.png",
+  },
+  {
+    name: "M. Nanda Utama",
+    role: "Software Engineer",
+    image: "/images/teams/nanda.png",
+  },
+  {
+    name: "Medry Arnandra Gustianto",
+    role: "UI/UX Designer",
+    image: "/images/teams/medri.png",
+  },
+  {
+    name: "Dwi Nugraha Ramadhan",
+    role: "UI/UX Designer",
+    image: "/images/teams/ramadhan.png",
+  },
+];
 
 export default function TeamCarousel() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const slidesPerView = 3
-  const totalSlides = Math.ceil(teamMembers.length / slidesPerView)
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slidesPerView = 3;
+  const totalSlides = Math.ceil(teamMembers.length / slidesPerView);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1))
-  }
+    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+  };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1))
-  }
+    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+  };
 
   const goToSlide = (slideIndex: number) => {
-    setCurrentSlide(slideIndex)
-  }
+    setCurrentSlide(slideIndex);
+  };
 
-  const visibleMembers = teamMembers.slice(currentSlide * slidesPerView, (currentSlide + 1) * slidesPerView)
+  const visibleMembers = teamMembers.slice(
+    currentSlide * slidesPerView,
+    (currentSlide + 1) * slidesPerView
+  );
 
   return (
     <div className="relative">
@@ -86,7 +139,10 @@ export default function TeamCarousel() {
 
       {/* Team Members Carousel */}
       <div className="overflow-hidden">
-        <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(0%)` }}>
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(0%)` }}
+        >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
             {visibleMembers.map((member, index) => (
               <div key={index} className="flex flex-col items-center">
@@ -111,12 +167,14 @@ export default function TeamCarousel() {
         {Array.from({ length: totalSlides }).map((_, i) => (
           <button
             key={`dot-${i}`}
-            className={`w-2 h-2 rounded-full ${i === currentSlide ? "bg-[#414141]" : "bg-[#c4c4c4]"}`}
+            className={`w-2 h-2 rounded-full ${
+              i === currentSlide ? "bg-[#414141]" : "bg-[#c4c4c4]"
+            }`}
             onClick={() => goToSlide(i)}
             aria-label={`Go to slide ${i + 1}`}
           ></button>
         ))}
       </div>
     </div>
-  )
+  );
 }
