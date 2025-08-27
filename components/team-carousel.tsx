@@ -37,6 +37,11 @@ const teamMembers = [
     image: "/images/teams/evan.png",
   },
   {
+    name: "Dony Romaza",
+    role: "Manager Administrasi",
+    image: "/images/teams/dony.png",
+  },
+  {
     name: "Veris Juniardi",
     role: "Tech Lead",
     image: "/images/teams/veris.png",
@@ -63,13 +68,28 @@ const teamMembers = [
   },
   {
     name: "Asri Yudha",
-    role: "Software Engineer",
+    role: "Senior Software Engineer",
     image: "/images/teams/yudha.png",
   },
   {
     name: "Calvin",
-    role: "Software Engineer",
+    role: "Senior Software Engineer",
     image: "/images/teams/calvin.png",
+  },
+  {
+    name: "Juliansyah",
+    role: "Senior Software Engineer",
+    image: "/images/teams/juliansyah.png",
+  },
+  {
+    name: "Indirokan Fadihilla",
+    role: "Software Engineer",
+    image: "/images/teams/okan.png",
+  },
+  {
+    name: "Arya Isnaidin",
+    role: "Software Engineer",
+    image: "/images/teams/arya.png",
   },
   {
     name: "M. Nanda Utama",
