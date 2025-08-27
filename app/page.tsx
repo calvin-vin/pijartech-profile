@@ -431,7 +431,18 @@ export default function Home() {
                   Kabupaten Malinau
                 </div>
               </div>
-
+              <div className="flex items-center justify-center group relative">
+                <Image
+                  src="/images/clients/kota_pangkalpinang.png"
+                  alt="Kota Pangkalpinang"
+                  width={120}
+                  height={50}
+                  className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <div className="absolute bottom-full mb-2 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Kota Pangkalpinang
+                </div>
+              </div>
               <div className="flex items-center justify-center group relative">
                 <Image
                   src="/images/clients/kabupaten_bangka.png"
@@ -454,18 +465,6 @@ export default function Home() {
                 />
                 <div className="absolute bottom-full mb-2 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   Kabupaten Bangka Selatan
-                </div>
-              </div>
-              <div className="flex items-center justify-center group relative">
-                <Image
-                  src="/images/clients/pupr.png"
-                  alt="PUPR"
-                  width={200}
-                  height={100}
-                  className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                />
-                <div className="absolute bottom-full mb-2 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  PUPR
                 </div>
               </div>
             </div>

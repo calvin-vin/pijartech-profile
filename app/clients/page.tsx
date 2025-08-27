@@ -12,6 +12,10 @@ export default function ClientsPage() {
         image: "/images/clients/kabupaten_malinau.png",
       },
       {
+        name: "Kota Pangkalpinang",
+        image: "/images/clients/kota_pangkalpinang.png",
+      },
+      {
         name: "Kabupaten Bangka Selatan",
         image: "/images/clients/kabupaten_bangka_selatan.png",
       },
